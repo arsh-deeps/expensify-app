@@ -5,10 +5,11 @@ import selectExpenses from '../selectors/expenses';
 
 const ExpenseList = (props) => (
     <div>  
-        <h1>Expense List</h1>
         <div>
         {props.expenses.map((expense)=>(<ExpenseItem id={expense.id} key={expense.id} description={expense.description} amount = {expense.amount} createdAt = {expense.createdAt} />))}
+        {props.expenses.length == 0? <p> No expenses to show.</p>:<p></p>}
         </div>
+        
     </div>
 );
 
